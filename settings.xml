@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<settings xsi:schemaLocation="http://maven.apache.org/SETTINGS/1.1.0 http://maven.apache.org/xsd/settings-1.1.0.xsd" xmlns="http://maven.apache.org/SETTINGS/1.1.0"
+          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+
+    <servers>
+        <server>
+            <username>anonymous</username>
+            <password>anonymous</password>
+            <id>nexus</id>
+        </server>
+    </servers>
+    <mirrors>
+        <mirror>
+
+            <name>Nexus Wesbank Repo</name>
+            <url>http://wsbrbpnxs01.wesbank.co.za:8081/repository/maven-public/</url>
+              <mirrorOf>*</mirrorOf>
+            <id>nexus</id>
+        </mirror>
+
+
+    </mirrors>
+    <pluginGroups>
+        <pluginGroup>org.sonarsource.scanner.maven</pluginGroup>
+    </pluginGroups>
+    <profiles>
+        <profile>
+            <repositories>
+                <repository>
+                    <releases />
+                    <snapshots />
+                    <id>wesbank</id>
+                    <url>http://wsbrbpnxs01.wesbank.co.za:8081/repository/maven-public/</url>
+                </repository>
+
+                <repository>
+                    <snapshots>
+                        <enabled>false</enabled>
+                    </snapshots>
+                    <id>central</id>
+                    <url>http://wsbrbpnxs01.wesbank.co.za:8081/repository/maven-public/</url>
+                </repository>
+                <repository>
+                    <releases>
+                        <enabled>false</enabled>
+                    </releases>
+                    <snapshots />
+                    <id>snapshots</id>
+                    <url>http://wsbrbpnxs01.wesbank.co.za:8081/repository/maven-snapshots/</url>
+                </repository>
+                <repository>
+                    <releases />
+                    <snapshots>
+                        <enabled>false</enabled>
+                    </snapshots>
+                    <id>releases</id>
+                    <url>http://wsbrbpnxs01.wesbank.co.za:8081/repository/maven-releases/</url>
+                </repository>
+                 <repository>
+                <id>maven</id>
+                 <name>maven</name>
+                <url>https://repo.maven.apache.org/maven2</url>
+            </repository>
+
+            </repositories>
+            <id>wesbank</id>
+        </profile>
+
+        <profile>
+        <id>sonar</id>
+        <activation>
+            <activeByDefault>true</activeByDefault>
+        </activation>
+        <properties>
+            <!-- Optional URL to server. Default value is http://localhost:9000 -->
+            <sonar.host.url>
+                http://localhost:9000
+            </sonar.host.url>
+        </properties>
+    </profile>
+
+    </profiles>
+    <activeProfiles>
+        <activeProfile>wesbank</activeProfile>
+        <activeProfile>sonar</activeProfile>
+    </activeProfiles>
+</settings>
+ 
