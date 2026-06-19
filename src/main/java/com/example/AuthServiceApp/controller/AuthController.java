@@ -53,10 +53,10 @@ public class AuthController {
                 //Direct to .xhtml page on Port 8083
                 if (isAdmin) {
 
-                    return "redirect:http://localhost:8083/dashboard/admin.xhtml";
+                    return "redirect:https://dashboard-bl7h.onrender.com/admin.xhtml";
                 } else {
 
-                    return "redirect:http://localhost:8083/dashboard/dashboard.xhtml";
+                    return "https://dashboard-bl7h.onrender.com/dashboard.xhtml";
                 }
 
             } else {
