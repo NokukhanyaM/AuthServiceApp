@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.PathVariable;
  * 'name' should match the spring.application.name of your User Microservice.
  * 'url' is where the User Microservice is currently running.
  */
-@FeignClient(name = "UserServiceApp", url = "https://userserviceapp-1.onrender.com/register")
+@FeignClient(name = "UserServiceApp", url = "https://userserviceapp-1.onrender.com")
 public interface UserClient {
 
     /**
