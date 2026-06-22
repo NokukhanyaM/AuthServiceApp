@@ -40,7 +40,7 @@ public class AuthController {
                 // Create a cookie with the token
                 Cookie authCookie = new Cookie("AUTH_TOKEN", token);
                 authCookie.setHttpOnly(true);   // safer, prevents JS access
-                authCookie.setSecure(false);    // set true if using HTTPS
+                authCookie.setSecure(true);    // set true for rander(HTTPS)
                 authCookie.setPath("/");        // available to all paths
                 // If both MS are under same domain, you can also setDomain("localhost")
                 response.addCookie(authCookie);
@@ -56,7 +56,7 @@ public class AuthController {
                     return "redirect:https://dashboard-bl7h.onrender.com/admin.xhtml";
                 } else {
 
-                    return "https://dashboard-bl7h.onrender.com/dashboard.xhtml";
+                    return "redirect:https://dashboard-bl7h.onrender.com/dashboard.xhtml";
                 }
 
             } else {
